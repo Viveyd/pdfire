@@ -5,6 +5,13 @@ import "./App.css";
 import "./reset.css";
 
 function App() {
+  const [selection, updateSelection] = useState([]);
+
+  function update(e) {
+    const files = [...e.target.files];
+    console.log(files);
+  }
+
   return (
     <>
       <header>
@@ -20,6 +27,7 @@ function App() {
               type="file"
               accept="image/*"
               multiple
+              onChange={update}
             />
           </label>
         </button>
