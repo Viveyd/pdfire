@@ -21,7 +21,7 @@ function App() {
         <button className="bare-btn">
           <Icon path={mdiFileArrowUpDown} size={1} />
         </button>
-        <button className="bare-btn">
+        <button className="bare-btn" onClick={window.print}>
           <Icon path={mdiFilePdfBox} size={1} />
         </button>
       </header>
