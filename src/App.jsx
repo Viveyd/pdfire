@@ -9,7 +9,7 @@ function App() {
 
   function update(e) {
     const files = [...e.target.files];
-    console.log(files);
+    updateSelection(files);
   }
 
   return (
@@ -18,21 +18,35 @@ function App() {
         <h1>PDFier</h1>
       </header>
       <main>
-        <button className="file-btn">
-          <label htmlFor="file-selector" className="center-flex full-wh">
-            Add files
-            <input
-              id="file-selector"
-              className="hidden"
-              type="file"
-              accept="image/*"
-              multiple
-              onChange={update}
-            />
-          </label>
-        </button>
+        {selection.length ? (
+          <FileList data={selection} />
+        ) : (
+          <button className="file-btn">
+            <label htmlFor="file-selector" className="center-flex full-wh">
+              Add files
+              <input
+                id="file-selector"
+                className="hidden"
+                type="file"
+                accept="image/*"
+                multiple
+                onChange={update}
+              />
+            </label>
+          </button>
+        )}
       </main>
     </>
+  );
+}
+
+function FileList({ data, sort = "default" }) {
+  return (
+    <ul>
+      {data.map((item) => {
+        return <li key={item.name}> {item.name} </li>;
+      })}
+    </ul>
   );
 }
 
