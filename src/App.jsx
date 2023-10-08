@@ -44,16 +44,22 @@ function App() {
 
 function FileList({ data, sort = "default" }) {
   return (
-    <ul className="file-list">
+    <table className="file-list">
+      <tr>
+        <th> Filename</th>
+        <th> Valid</th>
+      </tr>
       {data.map((item) => {
         return (
-          <li key={item.name}>
-            <span>{item.name}</span>
-            <Icon path={mdiCheck} size={1} color={"green"} />
-          </li>
+          <tr key={item.name}>
+            <td> {item.name} </td>
+            <td>
+              <Icon path={mdiCheck} size={1} color={"green"} />
+            </td>
+          </tr>
         );
       })}
-    </ul>
+    </table>
   );
 }
 
