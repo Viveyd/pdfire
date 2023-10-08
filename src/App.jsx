@@ -4,7 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import "./reset.css";
 import Icon from "@mdi/react";
-import { mdiCheck } from "@mdi/js";
+import { mdiCheck, mdiFilePdfBox, mdiFileArrowUpDown } from "@mdi/js";
 
 function App() {
   const [selection, updateSelection] = useState([]);
@@ -18,6 +18,12 @@ function App() {
     <>
       <header>
         <h1>PDFier</h1>
+        <button className="bare-btn">
+          <Icon path={mdiFileArrowUpDown} size={1} />
+        </button>
+        <button className="bare-btn">
+          <Icon path={mdiFilePdfBox} size={1} />
+        </button>
       </header>
       <main>
         {selection.length ? (

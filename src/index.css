@@ -18,3 +18,8 @@
 .hidden {
   display: none;
 }
+
+.bare-btn {
+  border: 0;
+  padding: 0;
+}
