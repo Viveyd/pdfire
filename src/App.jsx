@@ -3,6 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import "./reset.css";
+import "./print1.css";
 import Icon from "@mdi/react";
 import { mdiCheck, mdiFilePdfBox, mdiFileArrowUpDown } from "@mdi/js";
 
@@ -44,6 +45,7 @@ function App() {
           </button>
         )}
       </main>
+      <section id="print-area" className="hidden"></section>
     </>
   );
 }

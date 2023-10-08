@@ -1,0 +1,13 @@
+@media print {
+  #root > * {
+    display: none;
+  }
+
+  #print-area {
+    display: grid !important;
+  }
+
+  @page {
+    margin: 0;
+  }
+}
