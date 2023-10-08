@@ -42,7 +42,7 @@ function App() {
 
 function FileList({ data, sort = "default" }) {
   return (
-    <ul>
+    <ul className="file-list">
       {data.map((item) => {
         return <li key={item.name}> {item.name} </li>;
       })}
