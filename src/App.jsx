@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Children, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -42,23 +42,42 @@ function App() {
   );
 }
 
-function FileList({ data, sort = "default" }) {
+function FileList({ data, sort = "default", maxRows = 8 }) {
+  const rowsToRender = maxRows < data.length ? maxRows : data.length;
+  const rowsData = new Array(rowsToRender).fill([]);
+  let counter = 0;
+  data.forEach((item, index) => {
+    console.count();
+    rowsData[counter].push([index + 1, item.name]);
+    counter = counter < rowsToRender ? counter + 1 : 0;
+  });
+  console.log(rowsData);
+
   return (
     <table className="file-list">
-      <tr>
-        <th> Filename</th>
-        <th> Valid</th>
-      </tr>
-      {data.map((item) => {
-        return (
-          <tr key={item.name}>
-            <td> {item.name} </td>
-            <td>
-              <Icon path={mdiCheck} size={1} color={"green"} />
-            </td>
+      <thead>
+        <tr>
+          <th> </th>
+          <th> Filename</th>
+          <th> Valid</th>
+        </tr>
+      </thead>
+      <tbody>
+        {rowsData.map((data, index) => (
+          <tr key={index}>
+            {data.map((item) => (
+              <>
+                <td key={index}> {item[0]}.) </td>
+                <td> {item[1]} </td>
+                <td>
+                  {" "}
+                  <Icon path={mdiCheck} size={1} />{" "}
+                </td>
+              </>
+            ))}
           </tr>
-        );
-      })}
+        ))}
+      </tbody>
     </table>
   );
 }
