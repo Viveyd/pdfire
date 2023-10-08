@@ -3,6 +3,8 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import "./reset.css";
+import Icon from "@mdi/react";
+import { mdiCheck } from "@mdi/js";
 
 function App() {
   const [selection, updateSelection] = useState([]);
@@ -44,7 +46,12 @@ function FileList({ data, sort = "default" }) {
   return (
     <ul className="file-list">
       {data.map((item) => {
-        return <li key={item.name}> {item.name} </li>;
+        return (
+          <li key={item.name}>
+            <span>{item.name}</span>
+            <Icon path={mdiCheck} size={1} color={"green"} />
+          </li>
+        );
       })}
     </ul>
   );
