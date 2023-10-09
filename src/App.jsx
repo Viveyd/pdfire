@@ -5,7 +5,13 @@ import "./App.css";
 import "./reset.css";
 import "./print1.css";
 import Icon from "@mdi/react";
-import { mdiCheck, mdiFilePdfBox, mdiFileArrowUpDown } from "@mdi/js";
+import {
+  mdiCheck,
+  mdiFilePdfBox,
+  mdiFileArrowUpDown,
+  mdiArrowLeftThick,
+  mdiArrowRightThick,
+} from "@mdi/js";
 
 function App() {
   const [selection, updateSelection] = useState([]);
@@ -17,8 +23,8 @@ function App() {
 
   return (
     <>
-      <main className="bordered">
-        <header className="padded-24">
+      <main className="">
+        <header className="">
           <h1>PDFier</h1>
           <button className="bare-btn hover-1">
             <Icon path={mdiFileArrowUpDown} size={1} />
@@ -59,16 +65,10 @@ function FileList({ data, sort = "default" }) {
 
   return (
     <>
-      <button onClick={() => setFloor(floor - maxRows)} disabled={floor <= 0}>
-        prev
-      </button>
-      <button
-        onClick={() => setFloor(floor + maxRows)}
-        disabled={floor + maxRows >= data.length}
-      >
-        next
-      </button>
       <table className="file-list">
+        <colgroup>
+          <col />
+        </colgroup>
         <thead>
           <tr>
             <th> # </th>
@@ -86,6 +86,25 @@ function FileList({ data, sort = "default" }) {
               </td>
             </tr>
           ))}
+          <tr>
+            <td colSpan={3}>
+              <button
+                className="bare-btn"
+                onClick={() => setFloor(floor - maxRows)}
+                disabled={floor <= 0}
+              >
+                <Icon path={mdiArrowLeftThick} size={1} />
+              </button>
+              <span> {floor / maxRows + 1} </span>
+              <button
+                className="bare-btn"
+                onClick={() => setFloor(floor + maxRows)}
+                disabled={floor + maxRows >= data.length}
+              >
+                <Icon path={mdiArrowRightThick} size={1} />
+              </button>
+            </td>
+          </tr>
         </tbody>
       </table>
     </>
