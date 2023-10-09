@@ -46,7 +46,7 @@ function App() {
           )}
         </main>
       </main>
-      <PrintArea data={selection} />
+      <PrintArea className="letter" data={selection} />
     </>
   );
 }
