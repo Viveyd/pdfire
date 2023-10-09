@@ -11,7 +11,9 @@ export default function FileList({ data, sort = "default" }) {
     <>
       <header>
         <span>
-          Viewing selected files. {data.length}/{data.length} valid.
+          {!data.length
+            ? "No files selected"
+            : "Viewing selected files. {data.length}/{data.length} valid."}
         </span>
         <div>
           <button
