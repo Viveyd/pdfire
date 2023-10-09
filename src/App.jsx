@@ -28,21 +28,21 @@ function App() {
         </header>
         <main className="table-con border-top">
           <FileList data={selection} />
-          {/* {
+          {!selection.length && (
             <button className="file-btn hover-1">
-            <label htmlFor="file-selector" className="center-flex full-wh">
-              Add files
-              <input
-                id="file-selector"
-                className="hidden"
-                type="file"
-                accept="image/*"
-                multiple
-                onChange={update}
-              />
-            </label>
-          </button>
-          } */}
+              <label htmlFor="file-selector" className="center-flex full-wh">
+                Add files
+                <input
+                  id="file-selector"
+                  className="hidden"
+                  type="file"
+                  accept="image/*"
+                  multiple
+                  onChange={update}
+                />
+              </label>
+            </button>
+          )}
         </main>
       </main>
       <section id="print-area" className="hidden"></section>

@@ -79,7 +79,12 @@ body {
 /* FileList */
 
 .table-con {
+  display: flex;
+  flex-direction: column;
   font-family: "Gabarito", cursive;
+}
+
+.table-con > button {
 }
 
 .table-con > header {
