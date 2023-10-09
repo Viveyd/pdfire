@@ -6,16 +6,16 @@ body {
   align-items: center;
 }
 
-#root > main {
-  min-width: 300px;
-}
-
 #root {
   width: 100%;
   min-height: 100vh;
 }
 
-header {
+#root > main {
+  min-width: 300px;
+}
+
+#root > main > header {
   display: grid;
   grid-template-columns: 1fr repeat(2, auto);
 }
@@ -56,13 +56,22 @@ header > h1 {
   border-top: 1px solid black;
 }
 
-.padded-24 {
-  padding: 24px;
+.padded-16 {
+  padding: 16px;
 }
 
 .hover-1:hover {
   scale: 1.1;
   color: crimson;
+}
+
+.page-controls {
+  display: grid;
+}
+
+.table-con > header {
+  display: grid;
+  grid-template-columns: 1fr auto;
 }
 
 table {
@@ -93,18 +102,13 @@ tbody {
   font-size: 12px;
 }
 
-tr:not(:last-child) {
+tr {
   border-bottom: 1px solid grey;
 }
 
-tr:not(:last-child):hover {
+tr:hover {
   background-color: crimson;
   color: white;
-}
-
-table tbody tr:last-child {
-  text-align: right;
-  vertical-align: middle;
 }
 
 table colgroup :nth-child(1) {

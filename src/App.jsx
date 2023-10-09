@@ -33,7 +33,7 @@ function App() {
             <Icon path={mdiFilePdfBox} size={1} />
           </button>
         </header>
-        <main className="border-top padded-24">
+        <main className="table-con border-top">
           {selection.length ? (
             <FileList data={selection} />
           ) : (
@@ -65,6 +65,28 @@ function FileList({ data, sort = "default" }) {
 
   return (
     <>
+      <header>
+        <span>
+          Viewing selected files. {data.length}/{data.length} valid.
+        </span>
+        <div>
+          <button
+            className="bare-btn"
+            onClick={() => setFloor(floor - maxRows)}
+            disabled={floor <= 0}
+          >
+            <Icon path={mdiArrowLeftThick} size={1} />
+          </button>
+          <span> {floor / maxRows + 1} </span>
+          <button
+            className="bare-btn"
+            onClick={() => setFloor(floor + maxRows)}
+            disabled={floor + maxRows >= data.length}
+          >
+            <Icon path={mdiArrowRightThick} size={1} />
+          </button>
+        </div>
+      </header>
       <table className="file-list">
         <colgroup>
           <col />
@@ -86,25 +108,6 @@ function FileList({ data, sort = "default" }) {
               </td>
             </tr>
           ))}
-          <tr>
-            <td colSpan={3}>
-              <button
-                className="bare-btn"
-                onClick={() => setFloor(floor - maxRows)}
-                disabled={floor <= 0}
-              >
-                <Icon path={mdiArrowLeftThick} size={1} />
-              </button>
-              <span> {floor / maxRows + 1} </span>
-              <button
-                className="bare-btn"
-                onClick={() => setFloor(floor + maxRows)}
-                disabled={floor + maxRows >= data.length}
-              >
-                <Icon path={mdiArrowRightThick} size={1} />
-              </button>
-            </td>
-          </tr>
         </tbody>
       </table>
     </>
