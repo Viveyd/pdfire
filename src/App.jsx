@@ -16,37 +16,39 @@ function App() {
   }
 
   return (
-    <main className="bordered">
-      <header className="padded-24">
-        <h1>PDFier</h1>
-        <button className="bare-btn">
-          <Icon path={mdiFileArrowUpDown} size={1} />
-        </button>
-        <button className="bare-btn" onClick={window.print}>
-          <Icon path={mdiFilePdfBox} size={1} />
-        </button>
-      </header>
-      <main className="border-top padded-24">
-        {selection.length ? (
-          <FileList data={selection} />
-        ) : (
-          <button className="file-btn">
-            <label htmlFor="file-selector" className="center-flex full-wh">
-              Add files
-              <input
-                id="file-selector"
-                className="hidden"
-                type="file"
-                accept="image/*"
-                multiple
-                onChange={update}
-              />
-            </label>
+    <>
+      <main className="bordered">
+        <header className="padded-24">
+          <h1>PDFier</h1>
+          <button className="bare-btn">
+            <Icon path={mdiFileArrowUpDown} size={1} />
           </button>
-        )}
+          <button className="bare-btn" onClick={window.print}>
+            <Icon path={mdiFilePdfBox} size={1} />
+          </button>
+        </header>
+        <main className="border-top padded-24">
+          {selection.length ? (
+            <FileList data={selection} />
+          ) : (
+            <button className="file-btn">
+              <label htmlFor="file-selector" className="center-flex full-wh">
+                Add files
+                <input
+                  id="file-selector"
+                  className="hidden"
+                  type="file"
+                  accept="image/*"
+                  multiple
+                  onChange={update}
+                />
+              </label>
+            </button>
+          )}
+        </main>
       </main>
       <section id="print-area" className="hidden"></section>
-    </main>
+    </>
   );
 }
 
