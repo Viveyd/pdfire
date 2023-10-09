@@ -16,8 +16,8 @@ function App() {
   }
 
   return (
-    <>
-      <header>
+    <main className="bordered">
+      <header className="padded-24">
         <h1>PDFier</h1>
         <button className="bare-btn">
           <Icon path={mdiFileArrowUpDown} size={1} />
@@ -26,7 +26,7 @@ function App() {
           <Icon path={mdiFilePdfBox} size={1} />
         </button>
       </header>
-      <main>
+      <main className="border-top padded-24">
         {selection.length ? (
           <FileList data={selection} />
         ) : (
@@ -46,7 +46,7 @@ function App() {
         )}
       </main>
       <section id="print-area" className="hidden"></section>
-    </>
+    </main>
   );
 }
 
