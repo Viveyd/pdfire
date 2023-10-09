@@ -53,27 +53,42 @@ function App() {
 }
 
 function FileList({ data, sort = "default" }) {
+  const [floor, setFloor] = useState(0);
+  const maxRows = 8;
+  const ceil = floor + maxRows < data.length ? floor + maxRows : data.length;
+
   return (
-    <table className="file-list">
-      <thead>
-        <tr>
-          <th> # </th>
-          <th> Filename</th>
-          <th> Valid</th>
-        </tr>
-      </thead>
-      <tbody>
-        {data.map((data, index) => (
-          <tr key={index}>
-            <td>{index + 1}</td>
-            <td>{data.name}</td>
-            <td>
-              <Icon path={mdiCheck} color="green" />
-            </td>
+    <>
+      <button onClick={() => setFloor(floor - maxRows)} disabled={floor <= 0}>
+        prev
+      </button>
+      <button
+        onClick={() => setFloor(floor + maxRows)}
+        disabled={floor + maxRows >= data.length}
+      >
+        next
+      </button>
+      <table className="file-list">
+        <thead>
+          <tr>
+            <th> # </th>
+            <th> Filename</th>
+            <th> Valid</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {data.slice(floor, ceil).map((data, index) => (
+            <tr key={index}>
+              <td>{index + floor + 1}</td>
+              <td>{data.name}</td>
+              <td>
+                <Icon path={mdiCheck} color="green" />
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </>
   );
 }
 
