@@ -18,10 +18,17 @@ body {
 #root > main > header {
   display: grid;
   grid-template-columns: 1fr repeat(2, auto);
+  gap: 8px;
+  padding-right: 8px;
+  align-items: center;
 }
 
-header > h1 {
+#root > main > header > h1 {
   font-family: "Cairo Play", sans-serif;
+}
+
+#root > main > header > button {
+  height: min-content;
 }
 
 .file-btn {
@@ -68,6 +75,8 @@ header > h1 {
 .page-controls {
   display: grid;
 }
+
+/* FileList */
 
 .table-con {
   font-family: "Gabarito", cursive;
