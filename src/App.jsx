@@ -52,12 +52,14 @@ function App() {
 
 function FileList({ data, sort = "default", maxRows = 8 }) {
   const rowsToRender = maxRows < data.length ? maxRows : data.length;
-  const rowsData = new Array(rowsToRender).fill([]);
+  const rowsData = Array(rowsToRender)
+    .fill()
+    .map(() => []);
   let counter = 0;
   data.forEach((item, index) => {
-    console.count();
+    console.log(counter);
     rowsData[counter].push([index + 1, item.name]);
-    counter = counter < rowsToRender ? counter + 1 : 0;
+    counter = counter < rowsToRender - 1 ? counter + 1 : 0;
   });
   console.log(rowsData);
 
