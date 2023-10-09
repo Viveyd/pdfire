@@ -5,6 +5,7 @@ import "./print1.css";
 import Icon from "@mdi/react";
 import { mdiFilePdfBox, mdiFileArrowUpDown } from "@mdi/js";
 import FileList from "./FileList";
+import PrintArea from "./PrintArea";
 
 function App() {
   const [selection, updateSelection] = useState([]);
@@ -45,7 +46,7 @@ function App() {
           )}
         </main>
       </main>
-      <section id="print-area" className="hidden"></section>
+      <PrintArea data={selection}></PrintArea>
     </>
   );
 }
