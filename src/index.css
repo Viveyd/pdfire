@@ -65,3 +65,13 @@ header > h1 {
   scale: 1.1;
   color: crimson;
 }
+
+table {
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: 1px solid;
+}

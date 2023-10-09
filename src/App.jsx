@@ -52,41 +52,24 @@ function App() {
   );
 }
 
-function FileList({ data, sort = "default", maxRows = 8 }) {
-  const rowsToRender = maxRows < data.length ? maxRows : data.length;
-  const rowsData = Array(rowsToRender)
-    .fill()
-    .map(() => []);
-  let counter = 0;
-  data.forEach((item, index) => {
-    console.log(counter);
-    rowsData[counter].push([index + 1, item.name]);
-    counter = counter < rowsToRender - 1 ? counter + 1 : 0;
-  });
-  console.log(rowsData);
-
+function FileList({ data, sort = "default" }) {
   return (
     <table className="file-list">
       <thead>
         <tr>
-          <th> </th>
+          <th> # </th>
           <th> Filename</th>
           <th> Valid</th>
         </tr>
       </thead>
       <tbody>
-        {rowsData.map((data, index) => (
+        {data.map((data, index) => (
           <tr key={index}>
-            {data.map((item) => (
-              <>
-                <td key={index}> {item[0]}.) </td>
-                <td> {item[1]} </td>
-                <td>
-                  {" "}
-                  <Icon path={mdiCheck} size={1} />{" "}
-                </td>
-              </>
-            ))}
+            <td>{index + 1}</td>
+            <td>{data.name}</td>
+            <td>
+              <Icon path={mdiCheck} color="green" />
+            </td>
           </tr>
         ))}
       </tbody>
