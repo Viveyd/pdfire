@@ -60,3 +60,8 @@ header > h1 {
 .padded-24 {
   padding: 24px;
 }
+
+.hover-1:hover {
+  scale: 1.1;
+  color: crimson;
+}

@@ -20,10 +20,10 @@ function App() {
       <main className="bordered">
         <header className="padded-24">
           <h1>PDFier</h1>
-          <button className="bare-btn">
+          <button className="bare-btn hover-1">
             <Icon path={mdiFileArrowUpDown} size={1} />
           </button>
-          <button className="bare-btn" onClick={window.print}>
+          <button className="bare-btn hover-1" onClick={window.print}>
             <Icon path={mdiFilePdfBox} size={1} />
           </button>
         </header>
@@ -31,7 +31,7 @@ function App() {
           {selection.length ? (
             <FileList data={selection} />
           ) : (
-            <button className="file-btn">
+            <button className="file-btn hover-1">
               <label htmlFor="file-selector" className="center-flex full-wh">
                 Add files
                 <input
