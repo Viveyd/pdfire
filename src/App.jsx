@@ -6,7 +6,7 @@ import "./reset.css";
 import "./print1.css";
 import Icon from "@mdi/react";
 import {
-  mdiCheck,
+  mdiCheckCircle,
   mdiFilePdfBox,
   mdiFileArrowUpDown,
   mdiArrowLeftThick,
@@ -104,7 +104,7 @@ function FileList({ data, sort = "default" }) {
               <td>{index + floor + 1}</td>
               <td>{data.name}</td>
               <td>
-                <Icon path={mdiCheck} color="green" />
+                <Icon path={mdiCheckCircle} color="green" />
               </td>
             </tr>
           ))}

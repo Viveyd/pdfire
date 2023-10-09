@@ -69,25 +69,38 @@ header > h1 {
   display: grid;
 }
 
+.table-con {
+  font-family: "Gabarito", cursive;
+}
+
 .table-con > header {
   display: grid;
   grid-template-columns: 1fr auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.table-con > header > div {
+  display: flex;
 }
 
 table {
   border-collapse: collapse;
   width: 100%;
   table-layout: fixed;
-  font-family: "Gabarito", cursive;
 }
 
-table td:nth-child(3) {
+th:nth-child(1),
+th:nth-child(3),
+table td:nth-child(1) {
   text-align: center;
 }
 
 table tr svg,
 table th svg {
   width: 15px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 thead {
