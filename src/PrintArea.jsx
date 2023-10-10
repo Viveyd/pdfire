@@ -42,14 +42,14 @@ function PrintPage({ data }) {
   return (
     <div className="print-page">
       {data.map((item, index) => (
-        <>
-          <div>
+        <figure key={index}>
+          <figcaption>
             {item.label.split("#").map((line, index) => (
               <p key={index}> {line}</p>
             ))}
-          </div>
+          </figcaption>
           <img key={index} src={item.imgSrc} />
-        </>
+        </figure>
       ))}
     </div>
   );
