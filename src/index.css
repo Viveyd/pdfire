@@ -134,13 +134,12 @@ tbody {
   font-size: 12px;
 }
 
-tr {
+tr:not(:last-child) {
   border-bottom: 1px solid grey;
 }
 
 tbody tr:hover {
-  background-color: var(--primary-theme-color);
-  color: white;
+  background-color: grey;
 }
 
 table colgroup :nth-child(1) {
