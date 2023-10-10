@@ -9,10 +9,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: black;
 }
 
 #root {
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  max-width: 1000px;
   min-height: 100vh;
 }
 
@@ -139,7 +143,7 @@ tr:not(:last-child) {
 }
 
 tbody tr:hover {
-  background-color: grey;
+  background-color: silver;
 }
 
 table colgroup :nth-child(1) {
