@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Cairo+Play:wght@500&family=Gabarito&display=swap");
+
+:root {
+  --primary-theme-color: crimson;
+}
+
 body {
   min-height: 100vh;
   display: flex;
@@ -118,7 +123,7 @@ table th svg {
 }
 
 thead {
-  background-color: crimson;
+  background-color: var(--primary-theme-color);
   color: white;
   text-align: left;
   border: 1px solid black;
@@ -133,8 +138,8 @@ tr {
   border-bottom: 1px solid grey;
 }
 
-tr:hover {
-  background-color: crimson;
+tbody tr:hover {
+  background-color: var(--primary-theme-color);
   color: white;
 }
 
