@@ -30,7 +30,7 @@ function App() {
         <main className="table-con border-top">
           <FileList data={selection} />
           {!selection.length && (
-            <button className="file-btn hover-1">
+            <button className="file-btn">
               <label htmlFor="file-selector" className="center-flex full-wh">
                 Add files
                 <input
