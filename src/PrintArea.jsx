@@ -9,12 +9,16 @@ export default function PrintArea({ data }) {
     imageCounter < images.length;
     imageCounter++
   ) {
+    let label = data[imageCounter].name.split(".");
+    label.pop();
+    label = label.join(".");
+
     if (pageCounter === maxPerPage) {
       pagesData.push([]);
       pageCounter = 0;
     }
     pagesData[pagesData.length - 1].push({
-      label: data[imageCounter].name,
+      label,
       imgSrc: images[imageCounter],
     });
     pageCounter += 1;
@@ -39,7 +43,11 @@ function PrintPage({ data }) {
     <div className="print-page">
       {data.map((item, index) => (
         <>
-          <div> {item.label} </div>
+          <div>
+            {item.label.split("#").map((line, index) => (
+              <p key={index}> {line}</p>
+            ))}
+          </div>
           <img key={index} src={item.imgSrc} />
         </>
       ))}
