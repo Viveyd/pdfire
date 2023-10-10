@@ -3,7 +3,7 @@ import "./App.css";
 import "./reset.css";
 import "./print1.css";
 import Icon from "@mdi/react";
-import { mdiFilePdfBox, mdiFileArrowUpDown } from "@mdi/js";
+import { mdiFilePdfBox, mdiFileArrowUpDown, mdiPlusBox } from "@mdi/js";
 import FileList from "./FileList";
 import PrintArea from "./PrintArea";
 
@@ -30,9 +30,12 @@ function App() {
         <main className="table-con border-top">
           <FileList data={selection} />
           {!selection.length && (
-            <button className="file-btn">
-              <label htmlFor="file-selector" className="center-flex full-wh">
-                Add files
+            <button className="file-btn bare-btn ">
+              <label
+                htmlFor="file-selector"
+                className="flex-center full-wh hover-1"
+              >
+                <Icon path={mdiPlusBox} size={1} />
                 <input
                   id="file-selector"
                   className="hidden"
