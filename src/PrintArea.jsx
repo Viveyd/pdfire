@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function PrintArea({ data }) {
   const [images, setImages] = useState([]);
-  const maxPerPage = 6;
+  const maxPerPage = 9;
   const pagesData = [[]];
   for (
     let imageCounter = 0, pageCounter = 0;
