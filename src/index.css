@@ -4,6 +4,10 @@
   --primary-theme-color: crimson;
 }
 
+button {
+  background-color: transparent;
+}
+
 body {
   min-height: 100vh;
   display: flex;
