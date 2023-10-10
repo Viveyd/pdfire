@@ -13,7 +13,10 @@ export default function PrintArea({ data }) {
       pagesData.push([]);
       pageCounter = 0;
     }
-    pagesData[pagesData.length - 1].push(images[imageCounter]);
+    pagesData[pagesData.length - 1].push({
+      label: data[imageCounter].name,
+      imgSrc: images[imageCounter],
+    });
     pageCounter += 1;
   }
 
@@ -35,7 +38,10 @@ function PrintPage({ data }) {
   return (
     <div className="print-page">
       {data.map((item, index) => (
-        <img key={index} src={item} />
+        <>
+          <div> {item.label} </div>
+          <img key={index} src={item.imgSrc} />
+        </>
       ))}
     </div>
   );
