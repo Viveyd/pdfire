@@ -19,7 +19,7 @@ function App() {
     <>
       <main className="">
         <header className="">
-          <h1>PDFier</h1>
+          <h1>PDFire</h1>
           <button className="bare-btn hover-1">
             <Icon path={mdiFileArrowUpDown} size={1} />
           </button>
